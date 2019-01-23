@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testing" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="dfgasd" translatesAutoresizingMaskIntoConstraints="NO" id="Qnv-Rj-LqW">
+                                <rect key="frame" x="52" y="133" width="289" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL4-zM-ftl">
+                                <rect key="frame" x="34" y="60" width="289" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rJA-ZV-kWq">
+                                <rect key="frame" x="247" y="60" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="9ZT-Am-fm5"/>
+                                </connections>
+                            </stepper>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-PO-bzn">
+                                <rect key="frame" x="186" y="296" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85871717047224472" green="0.81043368036736774" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TL4-zM-ftl" secondAttribute="trailing" constant="52" id="1b2-TW-VNs"/>
+                            <constraint firstItem="TL4-zM-ftl" firstAttribute="width" secondItem="Qnv-Rj-LqW" secondAttribute="width" id="1kX-Df-LqD"/>
+                            <constraint firstItem="aIs-PO-bzn" firstAttribute="top" secondItem="Qnv-Rj-LqW" secondAttribute="bottom" constant="-183" id="CZq-ua-xXW"/>
+                            <constraint firstItem="Qnv-Rj-LqW" firstAttribute="top" secondItem="TL4-zM-ftl" secondAttribute="bottom" constant="52" id="GLU-f0-V2J"/>
+                            <constraint firstItem="Qnv-Rj-LqW" firstAttribute="leading" secondItem="aIs-PO-bzn" secondAttribute="trailing" constant="-154" id="Xap-Cq-CyX"/>
+                            <constraint firstItem="TL4-zM-ftl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fWS-Az-DIX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qnv-Rj-LqW" secondAttribute="trailing" constant="34" id="niD-SK-H6g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qnv-Rj-LqW" secondAttribute="bottom" constant="188" id="sUK-r9-gFb"/>
+                            <constraint firstItem="Qnv-Rj-LqW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="uPW-ir-YXV"/>
+                            <constraint firstItem="TL4-zM-ftl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="xEJ-3v-Pr0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="aIs-PO-bzn" id="ZZp-CP-dJC"/>
+                        <outlet property="constraint" destination="sUK-r9-gFb" id="vgQ-T5-ZEA"/>
+                        <outlet property="countLabel" destination="TL4-zM-ftl" id="w8L-HP-w3Z"/>
+                        <outlet property="stepper" destination="rJA-ZV-kWq" id="8H0-gb-L1K"/>
+                        <outlet property="textView" destination="Qnv-Rj-LqW" id="MIy-DC-k0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2257" y="30"/>
+        </scene>
+    </scenes>
+</document>

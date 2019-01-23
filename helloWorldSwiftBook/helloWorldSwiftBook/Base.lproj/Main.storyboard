@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="helloWorldSwiftBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEK-s9-kH0">
+                                <rect key="frame" x="16" y="563" width="115" height="84"/>
+                                <color key="backgroundColor" red="0.92698106308176154" green="1" blue="0.3020287648918345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="yGM-lI-f9t"/>
+                                </constraints>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="1" green="0.10352357931876921" blue="0.07981744580525485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.19690372737413775" green="1" blue="0.89098543513345452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pJ-iJ-zII">
+                                <rect key="frame" x="244" y="563" width="115" height="84"/>
+                                <color key="backgroundColor" red="0.92698106309999995" green="1" blue="0.30202876490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Регистрация">
+                                    <color key="titleColor" red="1" green="0.1035235793" blue="0.079817445809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.19690372740000001" green="1" blue="0.89098543509999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Введите логин" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-DM-Axj">
+                                <rect key="frame" x="16" y="346" width="343" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hD1-DM-Axj" secondAttribute="height" multiplier="343:66" id="d7X-OO-e04"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Введите пароль" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zPG-XW-UcW">
+                                <rect key="frame" x="16" y="474" width="343" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zPG-XW-UcW" secondAttribute="height" multiplier="343:66" id="Yqs-zO-D95"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86280460758314492" green="1" blue="0.99428485246068266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hD1-DM-Axj" firstAttribute="leading" secondItem="MEK-s9-kH0" secondAttribute="leading" priority="999" id="1nl-6h-hk9"/>
+                            <constraint firstItem="MEK-s9-kH0" firstAttribute="top" secondItem="zPG-XW-UcW" secondAttribute="bottom" constant="23" id="3Kh-b2-KVS"/>
+                            <constraint firstItem="0pJ-iJ-zII" firstAttribute="width" secondItem="MEK-s9-kH0" secondAttribute="width" id="3h8-PI-Lik"/>
+                            <constraint firstAttribute="bottom" secondItem="MEK-s9-kH0" secondAttribute="bottom" constant="20" id="6DH-z6-fTR"/>
+                            <constraint firstItem="hD1-DM-Axj" firstAttribute="width" secondItem="zPG-XW-UcW" secondAttribute="height" multiplier="343:66" id="FO7-LD-jOZ"/>
+                            <constraint firstItem="zPG-XW-UcW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ili-um-tSY"/>
+                            <constraint firstItem="MEK-s9-kH0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="JbK-5A-AUN"/>
+                            <constraint firstItem="MEK-s9-kH0" firstAttribute="top" secondItem="hD1-DM-Axj" secondAttribute="bottom" constant="151" id="KP9-2T-bMV"/>
+                            <constraint firstItem="zPG-XW-UcW" firstAttribute="leading" secondItem="MEK-s9-kH0" secondAttribute="leading" priority="999" id="NPe-Xr-yIk"/>
+                            <constraint firstItem="0pJ-iJ-zII" firstAttribute="leading" secondItem="MEK-s9-kH0" secondAttribute="trailing" constant="113" id="VVr-Sv-uoL"/>
+                            <constraint firstItem="0pJ-iJ-zII" firstAttribute="height" secondItem="MEK-s9-kH0" secondAttribute="height" id="bOU-Nj-dVW"/>
+                            <constraint firstItem="hD1-DM-Axj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="iNW-Hp-RTN"/>
+                            <constraint firstItem="hD1-DM-Axj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3m-lN-41U"/>
+                            <constraint firstAttribute="bottom" secondItem="0pJ-iJ-zII" secondAttribute="bottom" constant="20" id="vCM-51-hh1"/>
+                            <constraint firstAttribute="trailing" secondItem="0pJ-iJ-zII" secondAttribute="trailing" constant="16" id="wG3-ev-Gg6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="129.98500749625188"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCh-hh-OFJ">
+                                <rect key="frame" x="91" y="270" width="193" height="65"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="0.19690372740000001" green="1" blue="0.89098543509999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.79518252436705983" blue="0.97727590185145075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OCh-hh-OFJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="Cvz-8R-mBf"/>
+                            <constraint firstItem="OCh-hh-OFJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="V1m-n8-3PI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OCh-hh-OFJ" secondAttribute="trailing" constant="91" id="jo0-TD-MP2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OCh-hh-OFJ" secondAttribute="bottom" constant="332" id="kfj-Gi-sIt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="133"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="cQR-4t-d4b">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="CtC-6j-2AW" customClass="PageViewController" customModule="pageView" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TeO-fC-SzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="133"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="OCT-lm-8pO">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="w94-mk-bE9" customClass="ContentViewController" customModule="pageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="THP-bl-XcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYe-p3-uvh">
+                                <rect key="frame" x="133.5" y="273.5" width="108" height="119.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text&lt; text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd6-2x-vJV">
+                                <rect key="frame" x="16" y="85" width="343" height="30.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.1035235793" blue="0.079817445809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="etd-Ox-jYI">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.23103571247471566" green="0.48876700129533679" blue="0.19635551175535726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.44994737694300513" green="0.11332724338239467" blue="0.11322101610222118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83307579381944574" blue="0.9524247537290863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vd6-2x-vJV" firstAttribute="top" secondItem="HWy-0E-xqW" secondAttribute="top" constant="65" id="3Xr-qU-6E9"/>
+                            <constraint firstItem="MYe-p3-uvh" firstAttribute="centerX" secondItem="HWy-0E-xqW" secondAttribute="centerX" id="Hik-xX-0dh"/>
+                            <constraint firstItem="vd6-2x-vJV" firstAttribute="leading" secondItem="HWy-0E-xqW" secondAttribute="leading" constant="16" id="U3i-pd-c6m"/>
+                            <constraint firstItem="MYe-p3-uvh" firstAttribute="centerY" secondItem="HWy-0E-xqW" secondAttribute="centerY" constant="-10.5" id="kcC-Hp-GJR"/>
+                            <constraint firstItem="etd-Ox-jYI" firstAttribute="centerX" secondItem="HWy-0E-xqW" secondAttribute="centerX" id="mJs-eA-Pk2"/>
+                            <constraint firstItem="HWy-0E-xqW" firstAttribute="trailing" secondItem="vd6-2x-vJV" secondAttribute="trailing" constant="16" id="wCN-PC-o4O"/>
+                            <constraint firstItem="HWy-0E-xqW" firstAttribute="bottom" secondItem="etd-Ox-jYI" secondAttribute="bottom" constant="20" id="wih-hZ-VPu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HWy-0E-xqW"/>
+                    </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="MYe-p3-uvh" id="AIq-NH-EN5"/>
+                        <outlet property="pageControl" destination="etd-Ox-jYI" id="UQP-j7-H1J"/>
+                        <outlet property="presentTextLabel" destination="vd6-2x-vJV" id="fTg-am-zwp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeM-d4-AR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645.5999999999999" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
