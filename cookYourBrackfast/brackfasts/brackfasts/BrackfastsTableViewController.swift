@@ -117,7 +117,7 @@ self.present(activiryController, animated: true, completion: nil)
         if segue.identifier == "detailSegue"{
             if let indexPath = tableView.indexPathForSelectedRow{
                 let dvc = segue.destination as! DetailViewController
-                dvc.imageName = self.brackfasts[indexPath.row].image
+                dvc.breakfast = self.brackfasts[indexPath.row]
             }
         }
     }
