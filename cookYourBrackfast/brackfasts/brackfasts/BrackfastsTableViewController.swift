@@ -28,9 +28,21 @@ class BrackfastsTableViewController: UITableViewController {
         Bracfast(name: "15", type: "egg", location: "sdkljflskdjf", image: "15.jpg", isVisited: false)
     ]
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.estimatedRowHeight = 85
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +61,10 @@ class BrackfastsTableViewController: UITableViewController {
         cell.thumbnailImageView.layer.cornerRadius = 32.5 //делаем изображение круглым
         cell.thumbnailImageView.clipsToBounds = true //применяем обрезку изображений
         cell.nameLabel.text = brackfasts[indexPath.row].name
-    
+        cell.locationLabel.text = brackfasts[indexPath.row].location
+        cell.typeLabel.text = brackfasts[indexPath.row].type
+
+        
         cell.accessoryType = self.brackfasts[indexPath.row].isVisited ? .checkmark : .none // не дублируем галочки
         
         return cell

@@ -15,6 +15,9 @@
 		840B668021F87E81004A6BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B667F21F87E81004A6BCA /* Assets.xcassets */; };
 		840B668321F87E81004A6BCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B668121F87E81004A6BCA /* LaunchScreen.storyboard */; };
 		840B668B21F87F28004A6BCA /* BrackfastsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */; };
+		840F18222201B49800EDBCCF /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F18212201B49800EDBCCF /* RateViewController.swift */; };
+		840F18242202FA5700EDBCCF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F18232202FA5700EDBCCF /* MapViewController.swift */; };
+		840F18292202FC2A00EDBCCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840F18282202FC2A00EDBCCF /* MapKit.framework */; };
 		84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		840B668221F87E81004A6BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840B668421F87E81004A6BCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackfastsTableViewController.swift; sourceTree = "<group>"; };
+		840F18212201B49800EDBCCF /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		840F18232202FA5700EDBCCF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		840F18282202FC2A00EDBCCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackfastsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840F18292202FC2A00EDBCCF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +64,7 @@
 			children = (
 				840B667721F87E81004A6BCA /* brackfasts */,
 				840B667621F87E81004A6BCA /* Products */,
+				840F18272202FC2A00EDBCCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +81,8 @@
 			children = (
 				840B667821F87E81004A6BCA /* AppDelegate.swift */,
 				840B667C21F87E81004A6BCA /* Main.storyboard */,
+				840F18232202FA5700EDBCCF /* MapViewController.swift */,
+				840F18212201B49800EDBCCF /* RateViewController.swift */,
 				84030AD221FB501F0064260D /* Detail */,
 				84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */,
 				840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */,
@@ -82,6 +92,14 @@
 				840B668421F87E81004A6BCA /* Info.plist */,
 			);
 			path = brackfasts;
+			sourceTree = "<group>";
+		};
+		840F18272202FC2A00EDBCCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				840F18282202FC2A00EDBCCF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +134,11 @@
 				TargetAttributes = {
 					840B667421F87E81004A6BCA = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -161,6 +184,8 @@
 				84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */,
 				84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */,
 				84030ACF21FB49570064260D /* Brackfast.swift in Sources */,
+				840F18222201B49800EDBCCF /* RateViewController.swift in Sources */,
+				840F18242202FA5700EDBCCF /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

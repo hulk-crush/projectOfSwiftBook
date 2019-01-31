@@ -9,17 +9,50 @@
 import UIKit
 
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+    
+    @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     var breakfast: Bracfast?
     @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        imageView.image = UIImage(named: breakfast!.image)
+    @IBOutlet weak var mapButton: UIButton!
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        guard  let svc = segue.source as? RateViewController else { return }
+        guard let rating = svc.breakfRating else { return }
+        rateButton.setImage(UIImage(named: rating), for: .normal)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden((false), animated: true)
+    }
+        
+        
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let buttons = [rateButton, mapButton]
+        for button in buttons {
+            guard let button = button else {break}
+            button.layer.cornerRadius = 5
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+        }
+        
+        
+        tableView.estimatedRowHeight = 38
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        imageView.image = UIImage(named: breakfast!.image)
 
+//        tableView.backgroundColor = #colorLiteral(red: 0.6691333746, green: 0.9568627477, blue: 0.8621997098, alpha: 1)
+//        tableView.separatorColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        title = breakfast!.name
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -30,7 +63,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as!
-            BrDetailTableViewCell
+        BrDetailTableViewCell
         
         switch indexPath.row {
         case 0:
@@ -49,6 +82,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             break
         }
         
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
