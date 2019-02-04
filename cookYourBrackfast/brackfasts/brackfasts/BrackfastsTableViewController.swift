@@ -11,9 +11,9 @@ import UIKit
 class BrackfastsTableViewController: UITableViewController {
 
     var brackfasts: [Bracfast] = [
-        Bracfast(name: "1", type: "egg", location: "sdkljflskdjf", image: "1.jpg", isVisited: false),
-        Bracfast(name: "2", type: "egg", location: "sdkljflskdjf", image: "2.jpg", isVisited: false),
-        Bracfast(name: "3", type: "egg", location: "sdkljflskdjf", image: "3.jpg", isVisited: false),
+        Bracfast(name: "1", type: "egg", location: "Moscow", image: "1.jpg", isVisited: false),
+        Bracfast(name: "2", type: "egg", location: "New York", image: "2.jpg", isVisited: false),
+        Bracfast(name: "3", type: "egg", location: "Kiev", image: "3.jpg", isVisited: false),
         Bracfast(name: "4", type: "egg", location: "sdkljflskdjf", image: "4.jpg", isVisited: false),
         Bracfast(name: "5", type: "egg", location: "sdkljflskdjf", image: "5.jpg", isVisited: false),
         Bracfast(name: "6", type: "egg", location: "sdkljflskdjf", image: "6.jpg", isVisited: false),

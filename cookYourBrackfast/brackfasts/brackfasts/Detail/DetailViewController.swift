@@ -88,4 +88,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue"{
+            let dvc = segue.destination as! MapViewController
+        dvc.breakfast = self.breakfast
+    }
+}
+    
+    
+    
+    
 }
