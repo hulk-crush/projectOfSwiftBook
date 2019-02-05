@@ -25,9 +25,11 @@ class BrackfastsTableViewController: UITableViewController {
         Bracfast(name: "12", type: "egg", location: "sdkljflskdjf", image: "12.jpg", isVisited: false),
         Bracfast(name: "13", type: "egg", location: "sdkljflskdjf", image: "13.jpg", isVisited: false),
         Bracfast(name: "14", type: "egg", location: "sdkljflskdjf", image: "14.jpg", isVisited: false),
-        Bracfast(name: "15", type: "egg", location: "sdkljflskdjf", image: "15.jpg", isVisited: false)
-    ]
+        Bracfast(name: "15", type: "egg", location: "sdkljflskdjf", image: "15.jpg", isVisited: false)]
     
+    @IBAction func close(segue: UIStoryboardSegue){
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = true
