@@ -13,25 +13,37 @@ class NewBreakTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0{
+        let alertController = UIAlertController(title: "photo", message: nil, preferredStyle: .actionSheet)
+        
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+                self.chooseImagePickerAction(source: .camera)
+            }
+            let photoLibAction = UIAlertAction(title: "Library", style: .default) { (action) in
+                self.chooseImagePickerAction(source: .photoLibrary)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cameraAction)
+            alertController.addAction(photoLibAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+    func chooseImagePickerAction(source: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(source){
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
-
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
