@@ -44,7 +44,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.estimatedRowHeight = 38
         tableView.rowHeight = UITableView.automaticDimension
         
-        imageView.image = UIImage(named: breakfast!.image)
+        imageView.image = UIImage(data: breakfast!.image! as Data)
 
 //        tableView.backgroundColor = #colorLiteral(red: 0.6691333746, green: 0.9568627477, blue: 0.8621997098, alpha: 1)
 //        tableView.separatorColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)

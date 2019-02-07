@@ -16,14 +16,19 @@ class NewBreakTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
+    var isVisited = false
+    
     
     @IBAction func toggleIsVisitegPressed(_ sender: UIButton) {
         if sender == yesButton{
             sender.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             noButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            isVisited = true
         } else {
         sender.backgroundColor = #colorLiteral(red: 1, green: 0.1035235793, blue: 0.07981744581, alpha: 1)
         yesButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        isVisited = false
+
         }
         
     }
@@ -32,6 +37,24 @@ class NewBreakTableViewController: UITableViewController, UIImagePickerControlle
         if nameTextField.text == "" || addressTextField.text == "" || typeTextField.text == ""{
             print("not all string full")
         } else{
+            
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext{
+                let breakfast = Bracfast(context: context)
+                breakfast.name = nameTextField.text
+                breakfast.location = addressTextField.text
+                breakfast.type = typeTextField.text
+                breakfast.isVisited = isVisited
+                if let image = imageView.image {
+                    breakfast.image = UIImagePNGRepresentation(image)
+                }
+                do {
+                    try context.save()
+                    print("сохранение удалось")
+                } catch let error as NSError{
+                    print("не удалось сохранить данные \(error), \(error.userInfo)")
+                }
+            }
+            
             performSegue(withIdentifier: "unwindSegueFromBr", sender: self)
         }
         

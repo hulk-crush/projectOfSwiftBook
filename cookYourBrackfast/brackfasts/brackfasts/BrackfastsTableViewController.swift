@@ -7,26 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class BrackfastsTableViewController: UITableViewController {
 
-    var brackfasts: [Bracfast] = [
-        Bracfast(name: "1", type: "egg", location: "Moscow", image: "1.jpg", isVisited: false),
-        Bracfast(name: "2", type: "egg", location: "New York", image: "2.jpg", isVisited: false),
-        Bracfast(name: "3", type: "egg", location: "Kiev", image: "3.jpg", isVisited: false),
-        Bracfast(name: "4", type: "egg", location: "sdkljflskdjf", image: "4.jpg", isVisited: false),
-        Bracfast(name: "5", type: "egg", location: "sdkljflskdjf", image: "5.jpg", isVisited: false),
-        Bracfast(name: "6", type: "egg", location: "sdkljflskdjf", image: "6.jpg", isVisited: false),
-        Bracfast(name: "7", type: "egg", location: "sdkljflskdjf", image: "7.jpg", isVisited: false),
-        Bracfast(name: "8", type: "egg", location: "sdkljflskdjf", image: "8.jpeg", isVisited: false),
-        Bracfast(name: "9", type: "egg", location: "sdkljflskdjf", image: "9.jpg", isVisited: false),
-        Bracfast(name: "10", type: "egg", location: "sdkljflskdjf", image: "10.jpg", isVisited: false),
-        Bracfast(name: "11", type: "egg", location: "sdkljflskdjf", image: "11.jpg", isVisited: false),
-        Bracfast(name: "12", type: "egg", location: "sdkljflskdjf", image: "12.jpg", isVisited: false),
-        Bracfast(name: "13", type: "egg", location: "sdkljflskdjf", image: "13.jpg", isVisited: false),
-        Bracfast(name: "14", type: "egg", location: "sdkljflskdjf", image: "14.jpg", isVisited: false),
-        Bracfast(name: "15", type: "egg", location: "sdkljflskdjf", image: "15.jpg", isVisited: false)]
-    
+    var fetchResultController: NSFetchedResultsController<Brakfast>!
+    var brackfasts: [Bracfast] = []
+//        Bracfast(name: "1", type: "egg", location: "Moscow", image: "1.jpg", isVisited: false),
+//        Bracfast(name: "2", type: "egg", location: "New York", image: "2.jpg", isVisited: false),
+//        Bracfast(name: "3", type: "egg", location: "Kiev", image: "3.jpg", isVisited: false),
+//        Bracfast(name: "4", type: "egg", location: "sdkljflskdjf", image: "4.jpg", isVisited: false),
+//        Bracfast(name: "5", type: "egg", location: "sdkljflskdjf", image: "5.jpg", isVisited: false),
+//        Bracfast(name: "6", type: "egg", location: "sdkljflskdjf", image: "6.jpg", isVisited: false),
+//        Bracfast(name: "7", type: "egg", location: "sdkljflskdjf", image: "7.jpg", isVisited: false),
+//        Bracfast(name: "8", type: "egg", location: "sdkljflskdjf", image: "8.jpeg", isVisited: false),
+//        Bracfast(name: "9", type: "egg", location: "sdkljflskdjf", image: "9.jpg", isVisited: false),
+//        Bracfast(name: "10", type: "egg", location: "sdkljflskdjf", image: "10.jpg", isVisited: false),
+//        Bracfast(name: "11", type: "egg", location: "sdkljflskdjf", image: "11.jpg", isVisited: false),
+//        Bracfast(name: "12", type: "egg", location: "sdkljflskdjf", image: "12.jpg", isVisited: false),
+//        Bracfast(name: "13", type: "egg", location: "sdkljflskdjf", image: "13.jpg", isVisited: false),
+//        Bracfast(name: "14", type: "egg", location: "sdkljflskdjf", image: "14.jpg", isVisited: false),
+//        Bracfast(name: "15", type: "egg", location: "sdkljflskdjf", image: "15.jpg", isVisited: false)]
+//    
     @IBAction func close(segue: UIStoryboardSegue){
         
     }
@@ -45,6 +47,14 @@ class BrackfastsTableViewController: UITableViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
+        
+        let fetchRequest = NSFetchRequest<Bracfast> = Bracfast.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext{
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,7 +69,7 @@ class BrackfastsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BrackfastsTableViewCell
 
-        cell.thumbnailImageView.image = UIImage(named: brackfasts[indexPath.row].image)
+        cell.thumbnailImageView.image = UIImage(data: brackfasts[indexPath.row].image! as Data)
         cell.thumbnailImageView.layer.cornerRadius = 32.5 //делаем изображение круглым
         cell.thumbnailImageView.clipsToBounds = true //применяем обрезку изображений
         cell.nameLabel.text = brackfasts[indexPath.row].name
@@ -115,8 +125,8 @@ class BrackfastsTableViewController: UITableViewController {
 //
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let share = UITableViewRowAction(style: .default, title: "Share") {(action, indexPath) in
-            let defaultText = "I am here now" + self.brackfasts[indexPath.row].name
-            if let image = UIImage(named: self.brackfasts[indexPath.row].image){
+            let defaultText = "I am here now" + self.brackfasts[indexPath.row].name!
+            if let image = UIImage(data: self.brackfasts[indexPath.row].image! as Data){
                 let activiryController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
 self.present(activiryController, animated: true, completion: nil)
             }

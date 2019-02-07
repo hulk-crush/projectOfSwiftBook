@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACC21FB44D00064260D /* DetailViewController.swift */; };
-		84030ACF21FB49570064260D /* Brackfast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACE21FB49570064260D /* Brackfast.swift */; };
 		84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030AD021FB50090064260D /* BrDetailTableViewCell.swift */; };
 		840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B667821F87E81004A6BCA /* AppDelegate.swift */; };
 		840B667E21F87E81004A6BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B667C21F87E81004A6BCA /* Main.storyboard */; };
@@ -20,12 +19,12 @@
 		840F18292202FC2A00EDBCCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840F18282202FC2A00EDBCCF /* MapKit.framework */; };
 		840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */; };
 		840F184E220B14EF00EDBCCF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F184D220B14EF00EDBCCF /* CoreDataStack.swift */; };
+		840F1851220B164100EDBCCF /* Brackfasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 840F184F220B164100EDBCCF /* Brackfasts.xcdatamodeld */; };
 		84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84030ACC21FB44D00064260D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		84030ACE21FB49570064260D /* Brackfast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brackfast.swift; sourceTree = "<group>"; };
 		84030AD021FB50090064260D /* BrDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrDetailTableViewCell.swift; sourceTree = "<group>"; };
 		840B667521F87E81004A6BCA /* brackfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brackfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B667821F87E81004A6BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		840F18282202FC2A00EDBCCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBreakTableViewController.swift; sourceTree = "<group>"; };
 		840F184D220B14EF00EDBCCF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		840F1850220B164100EDBCCF /* Brackfasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brackfasts.xcdatamodel; sourceTree = "<group>"; };
 		84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackfastsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,9 +92,9 @@
 				84030AD221FB501F0064260D /* Detail */,
 				84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */,
 				840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */,
-				84030ACE21FB49570064260D /* Brackfast.swift */,
 				840B667F21F87E81004A6BCA /* Assets.xcassets */,
 				840B668121F87E81004A6BCA /* LaunchScreen.storyboard */,
+				840F184F220B164100EDBCCF /* Brackfasts.xcdatamodeld */,
 				840B668421F87E81004A6BCA /* Info.plist */,
 			);
 			path = brackfasts;
@@ -187,10 +187,10 @@
 				84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */,
 				840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */,
 				840B668B21F87F28004A6BCA /* BrackfastsTableViewController.swift in Sources */,
+				840F1851220B164100EDBCCF /* Brackfasts.xcdatamodeld in Sources */,
 				84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */,
 				84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */,
 				840F184E220B14EF00EDBCCF /* CoreDataStack.swift in Sources */,
-				84030ACF21FB49570064260D /* Brackfast.swift in Sources */,
 				840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */,
 				840F18222201B49800EDBCCF /* RateViewController.swift in Sources */,
 				840F18242202FA5700EDBCCF /* MapViewController.swift in Sources */,
@@ -393,6 +393,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		840F184F220B164100EDBCCF /* Brackfasts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				840F1850220B164100EDBCCF /* Brackfasts.xcdatamodel */,
+			);
+			currentVersion = 840F1850220B164100EDBCCF /* Brackfasts.xcdatamodel */;
+			path = Brackfasts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 840B666D21F87E81004A6BCA /* Project object */;
 }

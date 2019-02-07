@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(breakfast.location) { (placemarks, error) in
+        geocoder.geocodeAddressString(breakfast.location!) { (placemarks, error) in
             
             guard error == nil else { return }
             guard let placemarks = placemarks else {return }
@@ -52,7 +52,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView?.canShowCallout = true
         }
     let rightImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-    rightImage.image = UIImage(named: breakfast.image)
+    rightImage.image = UIImage(data: breakfast.image! as Data)
         annotationView?.rightCalloutAccessoryView = rightImage
         
         annotationView?.tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
