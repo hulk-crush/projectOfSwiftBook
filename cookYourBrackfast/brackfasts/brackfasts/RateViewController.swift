@@ -12,15 +12,15 @@ class RateViewController: UIViewController {
 
     @IBOutlet weak var ratingStackView: UIStackView!
     @IBOutlet weak var badButton: UIButton!
-    @IBOutlet weak var sosoButton: UIButton!
     @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var brilliantButton: UIButton!
     var breakfRating: String?
     
     @IBAction func rateBreakfast (sender: UIButton){
         switch  sender.tag {
         case 0: breakfRating = "bad"
-        case 1: breakfRating = "Soso"
-        case 2: breakfRating = "good"
+        case 1: breakfRating = "good"
+        case 2: breakfRating = "brilliant"
         default: break
         }
         performSegue(withIdentifier: "unvindSegueToDVC", sender: sender)
@@ -32,7 +32,7 @@ class RateViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
 //        UIView.animate(withDuration: 0.4){
 //            self.ratingStackView.transform = CGAffineTransform(scaleX: 1, y: 1)
-let buttonArray = [badButton, sosoButton, goodButton]
+let buttonArray = [badButton, goodButton, brilliantButton]
         for (index, button) in buttonArray.enumerated(){
             let delay = Double(index) * 0.2
             UIView.animate(withDuration: 0.6, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {button?.transform = CGAffineTransform(scaleX: 1, y: 1)}, completion: nil)
@@ -45,8 +45,8 @@ let buttonArray = [badButton, sosoButton, goodButton]
 //        ratingStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
 
         badButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-        sosoButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         goodButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        brilliantButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         let blur = UIBlurEffect(style: .light)
         let blurView = UIVisualEffectView(effect: blur)

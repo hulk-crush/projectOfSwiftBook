@@ -483,14 +483,14 @@
                                             <action selector="rateBreakfastWithSender:" destination="dOQ-U7-EVV" eventType="touchUpInside" id="c6t-mw-zfJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-sd-ari">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWs-sd-ari" userLabel="Good Button">
                                         <rect key="frame" x="128" y="0.0" width="85" height="85"/>
                                         <state key="normal" image="good"/>
                                         <connections>
                                             <action selector="rateBreakfastWithSender:" destination="dOQ-U7-EVV" eventType="touchUpInside" id="GIM-Am-odN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-oo-vuM">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-oo-vuM" userLabel="Brilliant Button">
                                         <rect key="frame" x="256" y="0.0" width="85" height="85"/>
                                         <state key="normal" image="brilliant"/>
                                         <connections>
@@ -518,9 +518,9 @@
                     </view>
                     <connections>
                         <outlet property="badButton" destination="dU8-1d-5fr" id="hOi-V1-30o"/>
-                        <outlet property="goodButton" destination="JEI-oo-vuM" id="abN-FQ-pvi"/>
+                        <outlet property="brilliantButton" destination="JEI-oo-vuM" id="3q0-BU-kWD"/>
+                        <outlet property="goodButton" destination="kWs-sd-ari" id="oLL-re-Fd4"/>
                         <outlet property="ratingStackView" destination="Xui-SC-dLk" id="bUh-c0-yFB"/>
-                        <outlet property="sosoButton" destination="kWs-sd-ari" id="6rD-O3-X7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjA-j7-Jzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
