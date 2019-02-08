@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACC21FB44D00064260D /* DetailViewController.swift */; };
+		84030ACF21FB49570064260D /* Brackfast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACE21FB49570064260D /* Brackfast.swift */; };
 		84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030AD021FB50090064260D /* BrDetailTableViewCell.swift */; };
 		840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B667821F87E81004A6BCA /* AppDelegate.swift */; };
 		840B667E21F87E81004A6BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B667C21F87E81004A6BCA /* Main.storyboard */; };
@@ -20,13 +21,14 @@
 		840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */; };
 		840F184E220B14EF00EDBCCF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F184D220B14EF00EDBCCF /* CoreDataStack.swift */; };
 		84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */; };
-		84EFF183220D8686004A22A1 /* brackfasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */; };
+		84EFF180220D7BE5004A22A1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EFF17F220D7BE5004A22A1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84030ACC21FB44D00064260D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		84030ACE21FB49570064260D /* Brackfast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brackfast.swift; sourceTree = "<group>"; };
 		84030AD021FB50090064260D /* BrDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrDetailTableViewCell.swift; sourceTree = "<group>"; };
-		840B667521F87E81004A6BCA /* brackfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brackfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840B667521F87E81004A6BCA /* breakfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B667821F87E81004A6BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B667D21F87E81004A6BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840B667F21F87E81004A6BCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,7 +41,7 @@
 		840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBreakTableViewController.swift; sourceTree = "<group>"; };
 		840F184D220B14EF00EDBCCF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackfastsTableViewCell.swift; sourceTree = "<group>"; };
-		84EFF182220D8686004A22A1 /* brackfasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = brackfasts.xcdatamodel; sourceTree = "<group>"; };
+		84EFF17F220D7BE5004A22A1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 		840B666C21F87E81004A6BCA = {
 			isa = PBXGroup;
 			children = (
-				840B667721F87E81004A6BCA /* brackfasts */,
+				84EFF17F220D7BE5004A22A1 /* Default-568h@2x.png */,
+				840B667721F87E81004A6BCA /* breakfasts */,
 				840B667621F87E81004A6BCA /* Products */,
 				840F18272202FC2A00EDBCCF /* Frameworks */,
 			);
@@ -75,16 +78,15 @@
 		840B667621F87E81004A6BCA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				840B667521F87E81004A6BCA /* brackfasts.app */,
+				840B667521F87E81004A6BCA /* breakfasts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		840B667721F87E81004A6BCA /* brackfasts */ = {
+		840B667721F87E81004A6BCA /* breakfasts */ = {
 			isa = PBXGroup;
 			children = (
 				840B667821F87E81004A6BCA /* AppDelegate.swift */,
-				84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */,
 				840B667C21F87E81004A6BCA /* Main.storyboard */,
 				840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */,
 				840F184D220B14EF00EDBCCF /* CoreDataStack.swift */,
@@ -93,11 +95,12 @@
 				84030AD221FB501F0064260D /* Detail */,
 				84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */,
 				840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */,
+				84030ACE21FB49570064260D /* Brackfast.swift */,
 				840B667F21F87E81004A6BCA /* Assets.xcassets */,
 				840B668121F87E81004A6BCA /* LaunchScreen.storyboard */,
 				840B668421F87E81004A6BCA /* Info.plist */,
 			);
-			path = brackfasts;
+			path = breakfasts;
 			sourceTree = "<group>";
 		};
 		840F18272202FC2A00EDBCCF /* Frameworks */ = {
@@ -111,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		840B667421F87E81004A6BCA /* brackfasts */ = {
+		840B667421F87E81004A6BCA /* breakfasts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 840B668721F87E81004A6BCA /* Build configuration list for PBXNativeTarget "brackfasts" */;
+			buildConfigurationList = 840B668721F87E81004A6BCA /* Build configuration list for PBXNativeTarget "breakfasts" */;
 			buildPhases = (
 				840B667121F87E81004A6BCA /* Sources */,
 				840B667221F87E81004A6BCA /* Frameworks */,
@@ -123,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = brackfasts;
+			name = breakfasts;
 			productName = brackfasts;
-			productReference = 840B667521F87E81004A6BCA /* brackfasts.app */;
+			productReference = 840B667521F87E81004A6BCA /* breakfasts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -148,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 840B667021F87E81004A6BCA /* Build configuration list for PBXProject "brackfasts" */;
+			buildConfigurationList = 840B667021F87E81004A6BCA /* Build configuration list for PBXProject "breakfasts" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -161,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				840B667421F87E81004A6BCA /* brackfasts */,
+				840B667421F87E81004A6BCA /* breakfasts */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840B668321F87E81004A6BCA /* LaunchScreen.storyboard in Resources */,
+				84EFF180220D7BE5004A22A1 /* Default-568h@2x.png in Resources */,
 				840B668021F87E81004A6BCA /* Assets.xcassets in Resources */,
 				840B667E21F87E81004A6BCA /* Main.storyboard in Resources */,
 			);
@@ -190,10 +194,10 @@
 				84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */,
 				84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */,
 				840F184E220B14EF00EDBCCF /* CoreDataStack.swift in Sources */,
+				84030ACF21FB49570064260D /* Brackfast.swift in Sources */,
 				840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */,
 				840F18222201B49800EDBCCF /* RateViewController.swift in Sources */,
 				840F18242202FA5700EDBCCF /* MapViewController.swift in Sources */,
-				84EFF183220D8686004A22A1 /* brackfasts.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,12 +345,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR78UHPG2L;
-				INFOPLIST_FILE = brackfasts/Info.plist;
+				INFOPLIST_FILE = breakfasts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush.brackfasts;
+				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -359,12 +363,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR78UHPG2L;
-				INFOPLIST_FILE = brackfasts/Info.plist;
+				INFOPLIST_FILE = breakfasts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush.brackfasts;
+				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		840B667021F87E81004A6BCA /* Build configuration list for PBXProject "brackfasts" */ = {
+		840B667021F87E81004A6BCA /* Build configuration list for PBXProject "breakfasts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				840B668521F87E81004A6BCA /* Debug */,
@@ -383,7 +387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		840B668721F87E81004A6BCA /* Build configuration list for PBXNativeTarget "brackfasts" */ = {
+		840B668721F87E81004A6BCA /* Build configuration list for PBXNativeTarget "breakfasts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				840B668821F87E81004A6BCA /* Debug */,
@@ -393,19 +397,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				84EFF182220D8686004A22A1 /* brackfasts.xcdatamodel */,
-			);
-			currentVersion = 84EFF182220D8686004A22A1 /* brackfasts.xcdatamodel */;
-			path = brackfasts.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 840B666D21F87E81004A6BCA /* Project object */;
 }
