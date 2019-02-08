@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import  CoreData
 
 class BrackfastsTableViewController: UITableViewController {
-
+    
+    var fetchResultsController: NSFetchedResultsController<Bracfast>!
     var brackfasts: [Bracfast] = []
 //        Bracfast(name: "1", type: "egg", location: "Moscow", image: "1.jpg", isVisited: false),
 //        Bracfast(name: "2", type: "egg", location: "New York", image: "2.jpg", isVisited: false),
@@ -45,6 +47,24 @@ class BrackfastsTableViewController: UITableViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
+        
+        let fetchRequest: NSFetchRequest<Bracfast> = Bracfast.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext{
+        fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil) //read about it
+        
+            do {
+                try fetchResultsController.performFetch()
+                brackfasts = fetchResultsController.fetchedObjects!
+            } catch let error as NSError{
+                print(error.localizedDescription)
+            }
+        
+        
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
