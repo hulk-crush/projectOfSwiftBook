@@ -12,7 +12,11 @@ import  CoreData
 class BrackfastsTableViewController: UITableViewController {
     
     var fetchResultsController: NSFetchedResultsController<Bracfast>!
+    var searchController: UISearchController!
+    var filtredResultArray: [Bracfast] = []
     var brackfasts: [Bracfast] = []
+    
+    
 //        Bracfast(name: "1", type: "egg", location: "Moscow", image: "1.jpg", isVisited: false),
 //        Bracfast(name: "2", type: "egg", location: "New York", image: "2.jpg", isVisited: false),
 //        Bracfast(name: "3", type: "egg", location: "Kiev", image: "3.jpg", isVisited: false),
@@ -37,9 +41,19 @@ class BrackfastsTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
     
-        
+    func filterContentFor(searchText text: String){
+        filtredResultArray = brackfasts.filter{(brackfast) -> Bool in
+            return(brackfast.name?.lowercased().contains(text.lowercased()))! // сравнивание маленьких букв, приведение больших к маленьким и сравнивается с поисковым запросом
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
         
         tableView.estimatedRowHeight = 85
         tableView.rowHeight = UITableView.automaticDimension
@@ -48,8 +62,8 @@ class BrackfastsTableViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         
-        let fetchRequest: NSFetchRequest<Bracfast> = Bracfast.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let fetchRequest: NSFetchRequest<Bracfast> = Bracfast.fetchRequest() //фильтр
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true) //сортировка по имени
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -66,7 +80,30 @@ class BrackfastsTableViewController: UITableViewController {
         
         }
     }
+    
+    //   MARK: - Fetch results controller delegate
+    func  controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+        tableView.beginUpdates()
+    }
 
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert: guard let indexPath = newIndexPath else { break }
+            tableView.insertRows(at: [indexPath], with: .fade)
+        case .delete: guard let indexPath = indexPath else {break}
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .update: guard let indexPath = indexPath else {break}
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        default:
+            tableView.reloadData()
+        }
+        brackfasts = controller.fetchedObjects as! [Bracfast]
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult> ) {
+        tableView.endUpdates()
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -133,23 +170,40 @@ class BrackfastsTableViewController: UITableViewController {
 //    //    tableView.reloadData()
 //    tableView.deleteRows(at: [indexPath], with: .fade) // animation for deliting
 //
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let share = UITableViewRowAction(style: .default, title: "Share") {(action, indexPath) in
             let defaultText = "I am here now" + self.brackfasts[indexPath.row].name!
             if let image = UIImage(data: self.brackfasts[indexPath.row].image! as Data){
                 let activiryController = UIActivityViewController(activityItems: [defaultText, image], applicationActivities: nil)
 self.present(activiryController, animated: true, completion: nil)
+                
             }
     }
+        
         let delete = UITableViewRowAction(style: .default, title: "Delete") {(action, indexPath) in
             self.brackfasts.remove(at: indexPath.row)
             
-            tableView.deleteRows(at: [indexPath], with: .fade) // animation for deliting
+          //  tableView.deleteRows(at: [indexPath], with: .fade) // animation for deliting
+            
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.coreDataStack.persistentContainer.viewContext{
+            let objectToDelete = self.fetchResultsController.object(at: indexPath)
+                context.delete(objectToDelete)
+                
+                do {
+                    try context.save()
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
         }
+    }
         share.backgroundColor = #colorLiteral(red: 0, green: 0.6837591477, blue: 1, alpha: 1)
         delete.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         return[delete, share]
-    }
+        
+}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue"{
             if let indexPath = tableView.indexPathForSelectedRow{
@@ -157,5 +211,12 @@ self.present(activiryController, animated: true, completion: nil)
                 dvc.breakfast = self.brackfasts[indexPath.row]
             }
         }
+    }
+}
+
+extension BrackfastsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentFor(searchText: searchController.searchBar.text!)
+        tableView.reloadData()
     }
 }
