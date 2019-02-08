@@ -54,6 +54,12 @@ class BrackfastsTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
+        searchController.searchBar.barTintColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        searchController.searchBar.tintColor = .white
+        
+        definesPresentationContext = true //не дает поиску перепрыгивать на другие вью
+        
         
         tableView.estimatedRowHeight = 85
         tableView.rowHeight = UITableView.automaticDimension
@@ -109,22 +115,35 @@ class BrackfastsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive && searchController.searchBar.text != ""{
+            return filtredResultArray.count
+        }
         return brackfasts.count
     }
 
+    func brackfastToDisplayAt(indexPath: IndexPath) -> Bracfast {
+        let brackfast: Bracfast
+        if searchController.isActive && searchController.searchBar.text != ""{
+            brackfast = filtredResultArray[indexPath.row]
+        } else {
+            brackfast = brackfasts[indexPath.row]
+        }
+        return brackfast
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BrackfastsTableViewCell
 
-        cell.thumbnailImageView.image = UIImage(data: brackfasts[indexPath.row].image! as Data)
+        let brackfast = brackfastToDisplayAt(indexPath: indexPath)
+        cell.thumbnailImageView.image = UIImage(data: brackfast.image! as Data)
         cell.thumbnailImageView.layer.cornerRadius = 32.5 //делаем изображение круглым
         cell.thumbnailImageView.clipsToBounds = true //применяем обрезку изображений
-        cell.nameLabel.text = brackfasts[indexPath.row].name
-        cell.locationLabel.text = brackfasts[indexPath.row].location
-        cell.typeLabel.text = brackfasts[indexPath.row].type
+        cell.nameLabel.text = brackfast.name
+        cell.locationLabel.text = brackfast.location
+        cell.typeLabel.text = brackfast.type
 
         
-        cell.accessoryType = self.brackfasts[indexPath.row].isVisited ? .checkmark : .none // не дублируем галочки
+        cell.accessoryType = brackfast.isVisited ? .checkmark : .none // не дублируем галочки
         
         return cell
     
@@ -208,7 +227,7 @@ self.present(activiryController, animated: true, completion: nil)
         if segue.identifier == "detailSegue"{
             if let indexPath = tableView.indexPathForSelectedRow{
                 let dvc = segue.destination as! DetailViewController
-                dvc.breakfast = self.brackfasts[indexPath.row]
+                dvc.breakfast = brackfastToDisplayAt(indexPath: indexPath)
             }
         }
     }
@@ -218,5 +237,17 @@ extension BrackfastsTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentFor(searchText: searchController.searchBar.text!)
         tableView.reloadData()
+    }
+}
+
+extension BrackfastsTableViewController: UISearchBarDelegate{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if searchBar.text == ""{
+            navigationController?.hidesBarsOnSwipe = false
+        }
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
