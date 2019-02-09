@@ -18,6 +18,7 @@ class NewBreakTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet weak var noButton: UIButton!
     var isVisited = false
     
+    
     @IBAction func toggleIsVisitegPressed(_ sender: UIButton) {
         if sender == yesButton{
             sender.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)

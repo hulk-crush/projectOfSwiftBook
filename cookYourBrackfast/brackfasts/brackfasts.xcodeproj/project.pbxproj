@@ -19,6 +19,7 @@
 		840F18292202FC2A00EDBCCF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840F18282202FC2A00EDBCCF /* MapKit.framework */; };
 		840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */; };
 		840F184E220B14EF00EDBCCF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F184D220B14EF00EDBCCF /* CoreDataStack.swift */; };
+		840F1851220B164100EDBCCF /* Brackfasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 840F184F220B164100EDBCCF /* Brackfasts.xcdatamodeld */; };
 		84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */; };
 		84EFF183220D8686004A22A1 /* brackfasts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */; };
 		84EFF185220F6062004A22A1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFF184220F6062004A22A1 /* ContentViewController.swift */; };
@@ -40,6 +41,7 @@
 		840F18282202FC2A00EDBCCF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBreakTableViewController.swift; sourceTree = "<group>"; };
 		840F184D220B14EF00EDBCCF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		840F1850220B164100EDBCCF /* Brackfasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brackfasts.xcdatamodel; sourceTree = "<group>"; };
 		84EE345921F9959A001027E2 /* BrackfastsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrackfastsTableViewCell.swift; sourceTree = "<group>"; };
 		84EFF182220D8686004A22A1 /* brackfasts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = brackfasts.xcdatamodel; sourceTree = "<group>"; };
 		84EFF184220F6062004A22A1 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				840B668A21F87F28004A6BCA /* BrackfastsTableViewController.swift */,
 				840B667F21F87E81004A6BCA /* Assets.xcassets */,
 				840B668121F87E81004A6BCA /* LaunchScreen.storyboard */,
+				840F184F220B164100EDBCCF /* Brackfasts.xcdatamodeld */,
 				840B668421F87E81004A6BCA /* Info.plist */,
 			);
 			path = brackfasts;
