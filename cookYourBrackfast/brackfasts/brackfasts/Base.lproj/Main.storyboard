@@ -549,7 +549,7 @@
         <!--Page View Controller-->
         <scene sceneID="n84-4u-ZUf">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="9rF-VC-gTc" customClass="PageViewController" customModule="brackfasts" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9rF-VC-gTc" customClass="PageViewController" customModule="brackfasts" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVG-7b-seS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1108" y="-486"/>
@@ -562,31 +562,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subheader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-6f-8ay">
-                                <rect key="frame" x="16" y="165" width="343" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-9O-gdO">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KXp-9O-gdO" secondAttribute="height" multiplier="15:16" id="1RM-yp-9H3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8k-Mx-m9A">
+                                <rect key="frame" x="0.0" y="89" width="375" height="32"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-9O-gdO">
-                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8k-Mx-m9A">
-                                <rect key="frame" x="16" y="89" width="343" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-ZV-3Sv">
+                                <rect key="frame" x="168" y="623" width="39" height="37"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHL-Al-i3r">
+                                <rect key="frame" x="118.5" y="229" width="138" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.79518252440000003" blue="0.97727590190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jHL-Al-i3r" secondAttribute="height" multiplier="23:6" id="rGc-lz-WEX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="zPq-8U-o5Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.98599333680000001" green="1" blue="0.96773371009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pageButoonPressed:" destination="Nf6-bc-s29" eventType="touchUpInside" id="bJ4-vJ-7Vd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-6f-8ay">
+                                <rect key="frame" x="0.0" y="143" width="375" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="Hdc-tQ-wAl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p8k-Mx-m9A" firstAttribute="leading" secondItem="wkt-Tx-hyO" secondAttribute="leading" id="BI8-I7-6iK"/>
+                            <constraint firstItem="KXp-9O-gdO" firstAttribute="trailing" secondItem="wkt-Tx-hyO" secondAttribute="trailing" id="bqQ-mq-RH7"/>
+                            <constraint firstItem="jHL-Al-i3r" firstAttribute="top" secondItem="bR0-6f-8ay" secondAttribute="bottom" constant="-32" id="ePc-Z5-o8x"/>
+                            <constraint firstItem="TP6-ZV-3Sv" firstAttribute="centerX" secondItem="wkt-Tx-hyO" secondAttribute="centerX" id="fxi-rD-ai6"/>
+                            <constraint firstItem="wkt-Tx-hyO" firstAttribute="trailing" secondItem="bR0-6f-8ay" secondAttribute="trailing" id="kPq-yR-q7y"/>
+                            <constraint firstItem="KXp-9O-gdO" firstAttribute="leading" secondItem="wkt-Tx-hyO" secondAttribute="leading" id="mgg-Mc-vPs"/>
+                            <constraint firstItem="p8k-Mx-m9A" firstAttribute="top" secondItem="wkt-Tx-hyO" secondAttribute="top" constant="69" id="o1G-6d-1UB"/>
+                            <constraint firstItem="wkt-Tx-hyO" firstAttribute="trailing" secondItem="p8k-Mx-m9A" secondAttribute="trailing" id="q0S-Tp-Q5Q"/>
+                            <constraint firstItem="jHL-Al-i3r" firstAttribute="centerX" secondItem="wkt-Tx-hyO" secondAttribute="centerX" id="qQT-fl-kE4"/>
+                            <constraint firstAttribute="bottom" secondItem="KXp-9O-gdO" secondAttribute="bottom" id="reP-BT-Qke"/>
+                            <constraint firstItem="bR0-6f-8ay" firstAttribute="leading" secondItem="wkt-Tx-hyO" secondAttribute="leading" id="tnl-Z6-7m0"/>
+                            <constraint firstItem="bR0-6f-8ay" firstAttribute="top" secondItem="p8k-Mx-m9A" secondAttribute="bottom" constant="22" id="ucN-Oh-9fq"/>
+                            <constraint firstItem="wkt-Tx-hyO" firstAttribute="bottom" secondItem="TP6-ZV-3Sv" secondAttribute="bottom" constant="7" id="x8e-PC-WI8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wkt-Tx-hyO"/>
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="p8k-Mx-m9A" id="JkV-EV-zP6"/>
                         <outlet property="imageView" destination="KXp-9O-gdO" id="W57-te-LTv"/>
+                        <outlet property="pageButton" destination="jHL-Al-i3r" id="NtG-9m-N0u"/>
+                        <outlet property="pageControll" destination="TP6-ZV-3Sv" id="Bxm-ME-VL4"/>
                         <outlet property="subheaderLabel" destination="bR0-6f-8ay" id="24z-If-H15"/>
                     </connections>
                 </viewController>

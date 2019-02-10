@@ -9,15 +9,20 @@
 import UIKit
 
 class PageViewController: UIPageViewController {
-
+    
     var headersArray = ["Записывайте", "Находите"]
     var subheaderArray = ["Создайте свой список любимых завтраков", "Найдите и отметьте на карте"]
     var imagesArray = ["food", "iphoneMap"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.dataSource = self
+        
+        if let firstVC = displayViewController(atIndex: 0){
+            setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+        }
+        
+        
     }
     
     func displayViewController(atIndex index: Int) -> ContentViewController? {
@@ -33,6 +38,13 @@ class PageViewController: UIPageViewController {
         
         return contentVC
     }
+    
+    func nextVC(atIndex index: Int) {
+        if let contentVC = displayViewController(atIndex: index + 1){
+            setViewControllers([contentVC], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension PageViewController: UIPageViewControllerDataSource {
@@ -48,5 +60,12 @@ extension PageViewController: UIPageViewControllerDataSource {
         return displayViewController(atIndex: index)
     }
     
-    
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return headersArray.count
+//    }
+//    
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        let contentVC = storyboard?.instantiateViewController(withIdentifier: "contentViewController") as? ContentViewController
+//    return contentVC!.index
+//    }
 }
