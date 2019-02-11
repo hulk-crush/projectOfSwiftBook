@@ -158,9 +158,11 @@ class BrackfastsTableViewController: UITableViewController {
         cell.accessoryType = brackfast.isVisited ? .checkmark : .none // не дублируем галочки
         
         return cell
-    
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //
 //        let ac = UIAlertController(title: nil, message: "Рецепт", preferredStyle: .actionSheet)

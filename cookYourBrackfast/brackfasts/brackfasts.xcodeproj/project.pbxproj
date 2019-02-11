@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACC21FB44D00064260D /* DetailViewController.swift */; };
 		84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030AD021FB50090064260D /* BrDetailTableViewCell.swift */; };
+		840AE3AD2211974800133A4E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3AC2211974800133A4E /* AboutTableViewController.swift */; };
 		840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B667821F87E81004A6BCA /* AppDelegate.swift */; };
 		840B667E21F87E81004A6BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B667C21F87E81004A6BCA /* Main.storyboard */; };
 		840B668021F87E81004A6BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B667F21F87E81004A6BCA /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		84030ACC21FB44D00064260D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		84030AD021FB50090064260D /* BrDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrDetailTableViewCell.swift; sourceTree = "<group>"; };
+		840AE3AC2211974800133A4E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		840B667521F87E81004A6BCA /* brackfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brackfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B667821F87E81004A6BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B667D21F87E81004A6BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				840B667821F87E81004A6BCA /* AppDelegate.swift */,
 				84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */,
 				840B667C21F87E81004A6BCA /* Main.storyboard */,
+				840AE3AC2211974800133A4E /* AboutTableViewController.swift */,
 				84EFF188220F608C004A22A1 /* Page */,
 				840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */,
 				840F184D220B14EF00EDBCCF /* CoreDataStack.swift */,
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EE345A21F9959A001027E2 /* BrackfastsTableViewCell.swift in Sources */,
+				840AE3AD2211974800133A4E /* AboutTableViewController.swift in Sources */,
 				840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */,
 				840B668B21F87F28004A6BCA /* BrackfastsTableViewController.swift in Sources */,
 				84EFF187220F607B004A22A1 /* PageViewController.swift in Sources */,
