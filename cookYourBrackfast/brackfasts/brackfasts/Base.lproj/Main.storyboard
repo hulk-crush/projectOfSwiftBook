@@ -92,16 +92,16 @@
             </objects>
             <point key="canvasLocation" x="-202" y="203"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Popular-->
         <scene sceneID="X9H-SP-P5X">
             <objects>
-                <tableViewController id="dKN-a7-zQO" sceneMemberID="viewController">
+                <tableViewController id="dKN-a7-zQO" customClass="PopularTableViewController" customModule="brackfasts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="deL-Fm-is3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Q08-h5-OR1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Q08-h5-OR1">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q08-h5-OR1" id="fAC-5O-QsZ">
@@ -115,7 +115,7 @@
                             <outlet property="delegate" destination="dKN-a7-zQO" id="LDq-5Z-bad"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sRj-oG-A1I"/>
+                    <navigationItem key="navigationItem" title="Popular" id="sRj-oG-A1I"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsW-BO-WGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,7 +487,7 @@
             </objects>
             <point key="canvasLocation" x="628" y="203"/>
         </scene>
-        <!--Root View Controller-->
+        <!--About us-->
         <scene sceneID="Zo5-Ip-TPP">
             <objects>
                 <tableViewController id="LwX-Qa-JWe" customClass="AboutTableViewController" customModule="brackfasts" customModuleProvider="target" sceneMemberID="viewController">
@@ -495,17 +495,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dcb-5H-mzR">
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swifbook" id="dcb-5H-mzR">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Eq7-do-EJm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="vcd-4O-8Kk" style="IBUITableViewCellStyleDefault" id="Eq7-do-EJm">
                                 <rect key="frame" x="0.0" y="208" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eq7-do-EJm" id="nDN-s1-qSo">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vcd-4O-8Kk">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -514,11 +523,29 @@
                             <outlet property="delegate" destination="LwX-Qa-JWe" id="8wT-wu-PjQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="UKh-s9-52j"/>
+                    <navigationItem key="navigationItem" title="About us" id="UKh-s9-52j"/>
+                    <connections>
+                        <segue destination="699-bj-4Pf" kind="show" identifier="showWebPageSegue" id="m5o-br-UCc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbz-GB-yFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-202" y="977"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="5MX-ew-TfD">
+            <objects>
+                <viewController id="699-bj-4Pf" customClass="WebViewController" customModule="brackfasts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kaJ-M7-M4a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bud-hg-mAR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HkY-S9-NbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="977"/>
         </scene>
         <!--About us-->
         <scene sceneID="Eju-fM-qVK">
@@ -776,5 +803,6 @@
         <image name="map" width="50" height="50"/>
         <image name="photo" width="170" height="170"/>
         <image name="pic" width="200" height="286"/>
+        <image name="swifbook" width="333" height="121"/>
     </resources>
 </document>

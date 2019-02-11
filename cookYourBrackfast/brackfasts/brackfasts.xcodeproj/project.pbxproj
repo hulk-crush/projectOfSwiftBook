@@ -10,6 +10,8 @@
 		84030ACD21FB44D00064260D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030ACC21FB44D00064260D /* DetailViewController.swift */; };
 		84030AD121FB50090064260D /* BrDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84030AD021FB50090064260D /* BrDetailTableViewCell.swift */; };
 		840AE3AD2211974800133A4E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3AC2211974800133A4E /* AboutTableViewController.swift */; };
+		840AE3AF2211A0D900133A4E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3AE2211A0D900133A4E /* WebViewController.swift */; };
+		840AE3B12211B4A200133A4E /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3B02211B4A200133A4E /* PopularTableViewController.swift */; };
 		840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B667821F87E81004A6BCA /* AppDelegate.swift */; };
 		840B667E21F87E81004A6BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B667C21F87E81004A6BCA /* Main.storyboard */; };
 		840B668021F87E81004A6BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B667F21F87E81004A6BCA /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		84030ACC21FB44D00064260D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		84030AD021FB50090064260D /* BrDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrDetailTableViewCell.swift; sourceTree = "<group>"; };
 		840AE3AC2211974800133A4E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		840AE3AE2211A0D900133A4E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		840AE3B02211B4A200133A4E /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
 		840B667521F87E81004A6BCA /* brackfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brackfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B667821F87E81004A6BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B667D21F87E81004A6BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,9 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				840B667821F87E81004A6BCA /* AppDelegate.swift */,
-				84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */,
 				840B667C21F87E81004A6BCA /* Main.storyboard */,
+				84EFF181220D8686004A22A1 /* brackfasts.xcdatamodeld */,
 				840AE3AC2211974800133A4E /* AboutTableViewController.swift */,
+				840AE3AE2211A0D900133A4E /* WebViewController.swift */,
+				840AE3B02211B4A200133A4E /* PopularTableViewController.swift */,
 				84EFF188220F608C004A22A1 /* Page */,
 				840F182A2209F2A800EDBCCF /* NewBreakTableViewController.swift */,
 				840F184D220B14EF00EDBCCF /* CoreDataStack.swift */,
@@ -212,8 +218,10 @@
 				840F182B2209F2A800EDBCCF /* NewBreakTableViewController.swift in Sources */,
 				840F18222201B49800EDBCCF /* RateViewController.swift in Sources */,
 				84EFF185220F6062004A22A1 /* ContentViewController.swift in Sources */,
+				840AE3AF2211A0D900133A4E /* WebViewController.swift in Sources */,
 				840F18242202FA5700EDBCCF /* MapViewController.swift in Sources */,
 				84EFF183220D8686004A22A1 /* brackfasts.xcdatamodeld in Sources */,
+				840AE3B12211B4A200133A4E /* PopularTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
