@@ -1,0 +1,72 @@
+
+/* Class = "UITabBarItem"; title = "About us"; ObjectID = "4uZ-bQ-zbD"; */
+"4uZ-bQ-zbD.title" = "About us";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7Gc-pR-sCr"; */
+"7Gc-pR-sCr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "value"; ObjectID = "9St-hu-DzI"; */
+"9St-hu-DzI.text" = "value";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "Atz-fy-hsN"; */
+"Atz-fy-hsN.text" = "Type";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "Hty-xF-Mx8"; */
+"Hty-xF-Mx8.normalTitle" = "No";
+
+/* Class = "UITextField"; placeholder = "name breakfast"; ObjectID = "OOZ-1W-9z2"; */
+"OOZ-1W-9z2.placeholder" = "name breakfast";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "RRl-VD-Edo"; */
+"RRl-VD-Edo.normalTitle" = "Yes";
+
+/* Class = "UILabel"; text = "как вам у нас?"; ObjectID = "Tud-3g-VRi"; */
+"Tud-3g-VRi.text" = "как вам у нас?";
+
+/* Class = "UILabel"; text = "are you be here? "; ObjectID = "U5G-8l-sxK"; */
+"U5G-8l-sxK.text" = "are you be here? ";
+
+/* Class = "UINavigationItem"; title = "About us"; ObjectID = "UKh-s9-52j"; */
+"UKh-s9-52j.title" = "About us";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "UhZ-F7-3OO"; */
+"UhZ-F7-3OO.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "Мои завтраки"; ObjectID = "YTL-sr-tiF"; */
+"YTL-sr-tiF.title" = "Мои завтраки";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Zzc-VK-EgS"; */
+"Zzc-VK-EgS.text" = "Name";
+
+/* Class = "UILabel"; text = "Subheader"; ObjectID = "bR0-6f-8ay"; */
+"bR0-6f-8ay.text" = "Subheader";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "cvZ-cc-Hyx"; */
+"cvZ-cc-Hyx.text" = "Type";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "dU9-HI-uh9"; */
+"dU9-HI-uh9.text" = "Location";
+
+/* Class = "UITextField"; placeholder = "type breakfast"; ObjectID = "eCn-90-V80"; */
+"eCn-90-V80.placeholder" = "type breakfast";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "hju-VF-hDk"; */
+"hju-VF-hDk.text" = "Address";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jHL-Al-i3r"; */
+"jHL-Al-i3r.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Header"; ObjectID = "p8k-Mx-m9A"; */
+"p8k-Mx-m9A.text" = "Header";
+
+/* Class = "UITextField"; placeholder = "Address breakfast"; ObjectID = "pis-Bn-4Eh"; */
+"pis-Bn-4Eh.placeholder" = "Address breakfast";
+
+/* Class = "UINavigationItem"; title = "Popular"; ObjectID = "sRj-oG-A1I"; */
+"sRj-oG-A1I.title" = "Popular";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "vcd-4O-8Kk"; */
+"vcd-4O-8Kk.text" = "Title";
+
+/* Class = "UILabel"; text = "key"; ObjectID = "vfA-PX-Smd"; */
+"vfA-PX-Smd.text" = "key";

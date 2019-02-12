@@ -12,6 +12,7 @@
 		840AE3AD2211974800133A4E /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3AC2211974800133A4E /* AboutTableViewController.swift */; };
 		840AE3AF2211A0D900133A4E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3AE2211A0D900133A4E /* WebViewController.swift */; };
 		840AE3B12211B4A200133A4E /* PopularTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840AE3B02211B4A200133A4E /* PopularTableViewController.swift */; };
+		840AE3B62212D88100133A4E /* Locolizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 840AE3B82212D88100133A4E /* Locolizable.strings */; };
 		840B667921F87E81004A6BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B667821F87E81004A6BCA /* AppDelegate.swift */; };
 		840B667E21F87E81004A6BCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B667C21F87E81004A6BCA /* Main.storyboard */; };
 		840B668021F87E81004A6BCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B667F21F87E81004A6BCA /* Assets.xcassets */; };
@@ -34,6 +35,9 @@
 		840AE3AC2211974800133A4E /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		840AE3AE2211A0D900133A4E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		840AE3B02211B4A200133A4E /* PopularTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewController.swift; sourceTree = "<group>"; };
+		840AE3B22212D5B700133A4E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		840AE3B32212D5C000133A4E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		840AE3B72212D88100133A4E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Locolizable.strings; sourceTree = "<group>"; };
 		840B667521F87E81004A6BCA /* brackfasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brackfasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B667821F87E81004A6BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B667D21F87E81004A6BCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		840B666C21F87E81004A6BCA = {
 			isa = PBXGroup;
 			children = (
+				840AE3B82212D88100133A4E /* Locolizable.strings */,
 				840B667721F87E81004A6BCA /* brackfasts */,
 				840B667621F87E81004A6BCA /* Products */,
 				840F18272202FC2A00EDBCCF /* Frameworks */,
@@ -197,6 +202,7 @@
 				840B668321F87E81004A6BCA /* LaunchScreen.storyboard in Resources */,
 				840B668021F87E81004A6BCA /* Assets.xcassets in Resources */,
 				840B667E21F87E81004A6BCA /* Main.storyboard in Resources */,
+				840AE3B62212D88100133A4E /* Locolizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,10 +234,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		840AE3B82212D88100133A4E /* Locolizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840AE3B72212D88100133A4E /* fr */,
+			);
+			name = Locolizable.strings;
+			path = brackfasts;
+			sourceTree = "<group>";
+		};
 		840B667C21F87E81004A6BCA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				840B667D21F87E81004A6BCA /* Base */,
+				840AE3B22212D5B700133A4E /* fr */,
+				840AE3B32212D5C000133A4E /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -251,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -312,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -374,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush.brackfasts;
+				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush.brackfasts;
+				PRODUCT_BUNDLE_IDENTIFIER = hulkCrush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

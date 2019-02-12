@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class NewBreakTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -51,13 +52,49 @@ class NewBreakTableViewController: UITableViewController, UIImagePickerControlle
                 } catch let error as NSError {
                     print("Не удалось сохранить данные \(error), \(error.userInfo)")
                 }
+                saveToCloud(bracfast)
             }
-        
             performSegue(withIdentifier: "unwindSegueFromBr", sender: self)
         }
         
     }
     
+    
+    func saveToCloud(_ brackfast: Bracfast){
+        
+        let bracRecord = CKRecord(recordType: "Bracfast")
+        bracRecord.setValue(nameTextField.text, forKey: "name")
+        bracRecord.setValue(typeTextField.text, forKey: "type" )
+        bracRecord.setValue(addressTextField.text, forKey: "location")
+        
+        guard let originImage = UIImage(data: brackfast.image! as Data) else { return }
+        let scale = originImage.size.width > 1080.0 ? 1080.0 / originImage.size.width : 1.0
+        let scaledImage = UIImage(data: brackfast.image! as Data, scale: scale)
+        
+        let imageFilePath = NSTemporaryDirectory() + brackfast.name!
+        let imageFileURL = URL(fileURLWithPath: imageFilePath)
+        
+        do {
+            try scaledImage?.jpegData(compressionQuality: 0.7)?.write(to: imageFileURL, options: .atomic)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let imageAsset = CKAsset(fileURL: imageFileURL)
+        bracRecord.setValue(imageAsset, forKey: "image")
+        let publicDataBase = CKContainer.default().publicCloudDatabase
+        publicDataBase.save(bracRecord) { (record, error) in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            do {
+                try FileManager.default.removeItem(at: imageFileURL)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,20 +116,19 @@ class NewBreakTableViewController: UITableViewController, UIImagePickerControlle
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0{
-        let alertController = UIAlertController(title: "photo", message: nil, preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: NSLocalizedString("photo", comment: "photo"), message: nil, preferredStyle: .actionSheet)
         
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            let cameraAction = UIAlertAction(title: NSLocalizedString("Camera", comment: "Camera") , style: .default) { (action) in
                 self.chooseImagePickerAction(source: .camera)
             }
-            let photoLibAction = UIAlertAction(title: "Library", style: .default) { (action) in
+            let photoLibAction = UIAlertAction(title: NSLocalizedString("Library", comment: "Library"), style: .default) { (action) in
                 self.chooseImagePickerAction(source: .photoLibrary)
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
             alertController.addAction(cameraAction)
             alertController.addAction(photoLibAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
-
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

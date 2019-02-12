@@ -15,8 +15,8 @@ class PopularTableViewController: UITableViewController {
     var brackfasts: [CKRecord] = []
     var spinner: UIActivityIndicatorView!
     var cache = NSCache<CKRecord.ID, AnyObject>()
-    let publicDataBase = CKContainer.default().publicCloudDatabase
-    
+//    let publicDataBase = CKContainer.default().publicCloudDatabase
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +87,7 @@ class PopularTableViewController: UITableViewController {
                 self.refreshControl?.endRefreshing()
             }
         }
-        publicDataBase.add(queryOperation)
+       // publicDataBase.add(queryOperation)
         
     }
     
@@ -140,7 +140,7 @@ class PopularTableViewController: UITableViewController {
                 self.cache.setObject(imageAsset.fileURL as AnyObject, forKey: brackfast.recordID)
             }
         }
-        publicDataBase.add(fetchRecordsOperation)
+       // publicDataBase.add(fetchRecordsOperation)
     }
     return cell
 }
