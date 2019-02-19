@@ -59,7 +59,10 @@ final class APIWeatherManager: APIManager {
         fetch(request: request, parse: { (json) -> CurrentWeather? in
             if let dictionary = json["currently"] as? [String: AnyObject] {
                 return CurrentWeather(JSON: dictionary)
-            } else { return nil }
+            } else {
+                return nil
+            }
+            
         }, completionHandler: completionHandler)
     }
 }
