@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MaskDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVf-1e-jZH" customClass="View" customModule="MaskDemo" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="183" width="300" height="300"/>
+                                <color key="backgroundColor" red="1" green="0.79518252440000003" blue="0.97727590190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YVf-1e-jZH" secondAttribute="height" multiplier="1:1" id="EAA-pa-m3a"/>
+                                    <constraint firstAttribute="height" constant="300" id="FYi-MW-g2l"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiiSize">
+                                        <real key="value" value="102"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozy-3Q-ErF" customClass="Button" customModule="MaskDemo" customModuleProvider="target">
+                                <rect key="frame" x="146" y="51" width="83" height="73"/>
+                                <color key="backgroundColor" red="0.95625751820000005" green="1" blue="0.96545646669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ozy-3Q-ErF" secondAttribute="height" multiplier="83:73" id="jrw-VP-KMY"/>
+                                    <constraint firstAttribute="height" constant="73" id="kbU-M2-XZI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.98599333680000001" green="1" blue="0.96773371009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.6343844072894026" blue="0.56139479131283565" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YVf-1e-jZH" firstAttribute="top" secondItem="Ozy-3Q-ErF" secondAttribute="bottom" constant="59" id="Uny-tZ-dCR"/>
+                            <constraint firstItem="Ozy-3Q-ErF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="Zik-Dz-Gnm"/>
+                            <constraint firstItem="Ozy-3Q-ErF" firstAttribute="centerX" secondItem="YVf-1e-jZH" secondAttribute="centerX" id="gfx-aY-q18"/>
+                            <constraint firstItem="Ozy-3Q-ErF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rNf-Le-2qE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
