@@ -28,7 +28,7 @@
                                     <color key="titleColor" red="0.98599333680000001" green="1" blue="0.96773371009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wIc-9T-pc4" kind="show" id="JXC-AX-ahP"/>
+                                    <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="964-vM-iN1"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-jz-9Jr">
@@ -52,6 +52,7 @@
                     <connections>
                         <outlet property="button" destination="Ick-Wf-1iu" id="fdU-yF-S0x"/>
                         <outlet property="imageView" destination="NaE-jz-9Jr" id="XFV-ga-qy6"/>
+                        <segue destination="wIc-9T-pc4" kind="show" identifier="showSecondScreen" id="9VD-xf-gxV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
