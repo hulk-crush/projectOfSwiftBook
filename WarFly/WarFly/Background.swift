@@ -10,7 +10,7 @@ import SpriteKit
 
 class Background: SKSpriteNode {
 
-    static func populateBackgraund(at point: CGPoint) -> Background{
+    static func populateBackground(at point: CGPoint) -> Background{
         let background = Background(imageNamed: "background")
         background.position = point
         background.zPosition = 0
