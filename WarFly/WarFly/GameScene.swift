@@ -8,19 +8,21 @@
 
 import SpriteKit
 import GameplayKit
-import CoreMotion //доступ к сенсорам телефона
 
 class GameScene: SKScene {
-    
-    let motionManager = CMMotionManager() //доступ к акселерометру
-    var xAcceleration: CGFloat = 0
-    var player: SKSpriteNode!
+   
+    var player: PlayerPlane!
     
     override func didMove(to view: SKView) {
         configureStartScene()
         spawnClouds()
         spawnIsland()
+        player.performFly()
         
+        let powerUp = PowerUp()
+        powerUp.performRotation()
+        powerUp.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        self.addChild(powerUp)
     }
     
     fileprivate func spawnClouds() {
@@ -64,25 +66,13 @@ class GameScene: SKScene {
         player = PlayerPlane.populate(at: CGPoint(x: screen.size.width / 2, y: 100))
         self.addChild(player)
         
-        motionManager.accelerometerUpdateInterval = 0.2
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
-            if let data = data {
-                let acceleration = data.acceleration
-                self.xAcceleration = CGFloat(acceleration.x) * 0.7 + self.xAcceleration * 0.3 //убавление значения акселерометра
-            }
-        }
+       
     }
     
     override func didSimulatePhysics() {
-        super.didSimulatePhysics()
         
-        player.position.x += xAcceleration * 50
         
-        if player.position.x < -70 {
-            player.position.x = self.size.width + 70
-        } else if player.position.x > self.size.width + 70 {
-            player.position.x = -70
-        }
+        
         enumerateChildNodes(withName: "backgroundSprite") { (node, stop) in
             if node.position.y < -199 {
                 node.removeFromParent()
