@@ -13,12 +13,13 @@
 
 final class Cloud: SKSpriteNode, GameBackgroundSpriteable {
 
-        static func populate() -> Cloud {
-            
+    static func populate(at point: CGPoint?) -> Cloud {
             let cloudImageName = configureName()
             let cloud = Cloud(imageNamed: cloudImageName)
             cloud.setScale(randomScaleFactor)
-            cloud.position = randomPoint()
+            cloud.position = point ?? randomPoint()
+            cloud.name = "backgroundSprite"
+            cloud.anchorPoint = CGPoint(x: 0.5, y: 1.0)
             cloud.zPosition = 10
             cloud.run(move(from: cloud.position))
             
