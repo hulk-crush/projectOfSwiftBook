@@ -23,6 +23,7 @@
 		84D26C1D22428C2B0007DBFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D26C1B22428C2B0007DBFA /* Main.storyboard */; };
 		84D26C1F22428C2C0007DBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D26C1E22428C2C0007DBFA /* Assets.xcassets */; };
 		84D26C2222428C2C0007DBFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D26C2022428C2C0007DBFA /* LaunchScreen.storyboard */; };
+		84F06028224A4B0E00DA2B19 /* Enemy_2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 84F06027224A4B0E00DA2B19 /* Enemy_2.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		84D26C1E22428C2C0007DBFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D26C2122428C2C0007DBFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D26C2322428C2C0007DBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F06027224A4B0E00DA2B19 /* Enemy_2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_2.atlas; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +88,9 @@
 				84D26C1922428C2B0007DBFA /* GameViewController.swift */,
 				842684BC22491E8A0035BF23 /* PowerUp.swift */,
 				842684BA22452D510035BF23 /* GameBackgroudSpriteable+Extencion.swift */,
-				84D26C1E22428C2C0007DBFA /* Assets.xcassets */,
 				84D26C1B22428C2B0007DBFA /* Main.storyboard */,
+				84D26C1E22428C2C0007DBFA /* Assets.xcassets */,
+				84F06027224A4B0E00DA2B19 /* Enemy_2.atlas */,
 				842684C3224932050035BF23 /* GreenPowerUp.atlas */,
 				842684C1224928550035BF23 /* Enemy_1.atlas */,
 				842684B82244E5110035BF23 /* PlayerPlane.atlas */,
@@ -155,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F06028224A4B0E00DA2B19 /* Enemy_2.atlas in Resources */,
 				84D26C1D22428C2B0007DBFA /* Main.storyboard in Resources */,
 				842684B92244E5110035BF23 /* PlayerPlane.atlas in Resources */,
 				84D26C1F22428C2C0007DBFA /* Assets.xcassets in Resources */,
