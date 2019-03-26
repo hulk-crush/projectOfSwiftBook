@@ -41,7 +41,6 @@ class PlayerPlane: SKSpriteNode {
             if let data = data {
                 let acceleration = data.acceleration
                 self.xAcceleration = CGFloat(acceleration.x) * 0.7 + self.xAcceleration * 0.3 //убавление значения акселерометра
-                print(self.xAcceleration)
             }
         }
         let planeWaitAction = SKAction.wait(forDuration: 1.0)
